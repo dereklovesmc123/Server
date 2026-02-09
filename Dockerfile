@@ -1,4 +1,4 @@
-FROM openjdk:21-jdk-slim
+FROM eclipse-temurin:21-jdk
 WORKDIR /minecraft
 
 # Download PaperMC server jar for 1.21.11 (replace build number if newer)
@@ -9,4 +9,6 @@ RUN echo "eula=true" > eula.txt
 
 EXPOSE 25565
 CMD ["java", "-Xms512M", "-Xmx512M", "-jar", "server.jar", "nogui"]
+
+
 
